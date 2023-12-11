@@ -37,14 +37,27 @@ print(Y_Train)
 print("Y Test Data.............")
 print(Y_Test)
 
+
+#one hot encoder
+from sklearn.preprocessing import OneHotEncoder
+onehotencoder = OneHotEncoder()
+x = onehotencoder.fit_transform(X).toarray()
+print(x[:,0:1])
+
+
+
 #categorical data encoding
 # preprocessing
-from sklearn.preprocessing import LabelEncoder
+#from sklearn.preprocessing import LabelEncoder
 
-labelEncoder=LabelEncoder()
+#labelEncoder=LabelEncoder()
 
-X[:,0]=labelEncoder.fit_transform(X[:,0])
-print(X)
+#X[:,0]=labelEncoder.fit_transform(X[:,0])
+#print(X)
 
-Y=labelEncoder.fit_transform(Y)
-print(Y)
+#Y=labelEncoder.fit_transform(Y)
+#print(Y)
+
+
+
+
