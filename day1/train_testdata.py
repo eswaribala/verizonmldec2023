@@ -45,3 +45,6 @@ labelEncoder=LabelEncoder()
 
 X[:,0]=labelEncoder.fit_transform(X[:,0])
 print(X)
+
+Y=labelEncoder.fit_transform(Y)
+print(Y)
