@@ -9,10 +9,13 @@ import pandas as pd
 
 df =pd.read_csv("F:/verizonmldec2023/datasets/Data.csv")
 
+# select all rows and all the columns except last column
+
 X=df.iloc[:,:-1].values
 
 print(X)
 
+## select all the rows and last column 
 Y=df.iloc[:,-1].values
 print(Y)
 
@@ -33,3 +36,12 @@ print(Y_Train)
 
 print("Y Test Data.............")
 print(Y_Test)
+
+#categorical data encoding
+# preprocessing
+from sklearn.preprocessing import LabelEncoder
+
+labelEncoder=LabelEncoder()
+
+X[:,0]=labelEncoder.fit_transform(X[:,0])
+print(X)
