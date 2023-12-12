@@ -41,6 +41,8 @@ print(Y_Test)
 #one hot encoder
 from sklearn.preprocessing import OneHotEncoder
 onehotencoder = OneHotEncoder()
+
+#create unit matrix with 0 and 1
 x = onehotencoder.fit_transform(X).toarray()
 print(x[:,0:4])
 
