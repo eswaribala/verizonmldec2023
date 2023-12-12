@@ -29,7 +29,7 @@ from sklearn.preprocessing import Normalizer
 scaler = Normalizer()
 scaled_data = scaler.fit_transform(df)
 scaled_df = pd.DataFrame(scaled_data,columns=df.columns)
-print(scaled_df)
+print(scaled_df.iloc[:,0])
 
 
 from sklearn.preprocessing import StandardScaler
