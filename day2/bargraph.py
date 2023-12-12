@@ -6,13 +6,13 @@ Created on Tue Dec 12 09:29:52 2023
 """
 import pandas as pd
 from matplotlib import pyplot as plt
-data=pd.read_csv("F:/verizonmldec2023/datasets/Position_Salaries.csv")
+data=pd.read_csv("F:/verizonmldec2023/datasets/population.csv")
 df=pd.DataFrame(data)
-level=df['Level']
-salary=df['Salary']
+level=df['Year']
+salary=df['Value']
 
-print(df["Level"],df["Salary"])
-df = pd.DataFrame( {"Level":df["Level"], "Salary":df["Salary"]})
+print(df["Year"],df["Value"])
+df = pd.DataFrame( {"Level":df["Year"], "Salary":df["Value"]})
 print(df)
 x = df.values
 
@@ -23,19 +23,20 @@ x_scaled = min_max_scaler.fit_transform(x)
 df = pd.DataFrame(x_scaled)
 print(df)
 
-# from sklearn.preprocessing import Normalizer
+# from sklearn.preprocessing import RobustScaler
  
-# scaler = Normalizer()
+# scaler = RobustScaler()
 # scaled_data = scaler.fit_transform(df)
-# scaled_df = pd.DataFrame(scaled_data,columns=df.columns)
-# print(scaled_df)
+# scaled_df = pd.DataFrame(scaled_data,
+#                          columns=df.columns)
+# print(scaled_df.head())
 
 fig=plt.figure(figsize=(10,5))
 plt.scatter(df.iloc[:,0],df.iloc[:,1],color="red")
 plt.title("Level vs Salary")
 plt.xlabel("Level")
 plt.ylabel("Salary")
-#plt.xticks(range(0.0,0.8))
+#plt.xticks(plt.xticks(list(df.iloc[:,0])))
 plt.legend(["Salary","Level"],loc="lower right")
 plt.grid()
 plt.show()
