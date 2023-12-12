@@ -24,3 +24,7 @@ variance=np.var(df.iloc[:,1])
 
 print("The Salary closer to mean value", stdev)
 print("The Salary Variance", variance)
+
+#calculate the percentile
+perc =  np.percentile(df.iloc[:,1],25)
+print("25th Percentile", perc)
