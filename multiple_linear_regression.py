@@ -40,3 +40,33 @@ est = sm.OLS(y_train, X_train) #ordinary least square method
 est2 = est.fit()
 print("Summary.....")
 print(est2.summary())
+
+
+
+#Training Instance
+
+
+plt.figure()
+plt.title('RandD vs Profit')
+plt.xlabel('RandD')
+plt.ylabel('Profit')
+plt.plot(dataset["RandD"].head(n=5), dataset["Profit"].head(n=5), 'b.') #color code is k or m or etc.,
+#plt.axis([0, 25, 0, 25])
+plt.grid(True)
+
+plt.figure()
+plt.title('Administration vs Profit')
+plt.xlabel('Administration')
+plt.ylabel('Profit')
+plt.plot(dataset["Administration"].head(n=5), dataset["Profit"].head(n=5), 'red') #color code is k or m or etc.,
+#plt.axis([0, 25, 0, 25])
+plt.grid(True)
+
+plt.figure()
+plt.title('Marketing vs Profit')
+plt.xlabel('Marketing')
+plt.ylabel('Profit')
+plt.plot(dataset["Marketing"].head(n=5), dataset["Profit"].head(n=5), 'green') #color code is k or m or etc.,
+#plt.axis([0, 25, 0, 25])
+plt.grid(True)
+plt.show()
