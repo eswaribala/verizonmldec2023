@@ -24,7 +24,7 @@ print('Z-Score :',z_score)
  
 # Critical Z-Score
 
-'''
+
 z_critical = stats.norm.ppf(1-alpha)
 print('Critical Z-Score :',z_critical)
  
@@ -47,4 +47,3 @@ if p_value <  alpha:
 else:
   print("Fail to Reject Null Hypothesis")
   
-  '''
